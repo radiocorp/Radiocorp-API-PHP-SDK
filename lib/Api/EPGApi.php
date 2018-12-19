@@ -90,7 +90,7 @@ class EPGApi
     /**
      * Operation epgCurrentShowGet
      *
-     * Get the current on-air shows.
+     * Get the current on-air show.
      *
      *
      * @throws \RadioCorp\ApiException on non-2xx response
@@ -106,7 +106,7 @@ class EPGApi
     /**
      * Operation epgCurrentShowGetWithHttpInfo
      *
-     * Get the current on-air shows.
+     * Get the current on-air show.
      *
      *
      * @throws \RadioCorp\ApiException on non-2xx response
@@ -193,7 +193,7 @@ class EPGApi
     /**
      * Operation epgCurrentShowGetAsync
      *
-     * Get the current on-air shows.
+     * Get the current on-air show.
      *
      *
      * @throws \InvalidArgumentException
@@ -212,7 +212,7 @@ class EPGApi
     /**
      * Operation epgCurrentShowGetAsyncWithHttpInfo
      *
-     * Get the current on-air shows.
+     * Get the current on-air show.
      *
      *
      * @throws \InvalidArgumentException
