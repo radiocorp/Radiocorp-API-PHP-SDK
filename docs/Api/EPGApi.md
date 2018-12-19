@@ -4,7 +4,7 @@ All URIs are relative to *https://api.dev.radiocorp.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**epgCurrentShowGet**](EPGApi.md#epgCurrentShowGet) | **GET** /Epg/CurrentShow | Get the current on-air show.
+[**epgCurrentShowGet**](EPGApi.md#epgCurrentShowGet) | **GET** /Epg/CurrentShow | Get the current on-air shows.
 [**epgNextShowGet**](EPGApi.md#epgNextShowGet) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 [**epgWeeklyEpgGet**](EPGApi.md#epgWeeklyEpgGet) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **epgCurrentShowGet**
 > \RadioCorp\Model\EpgShow epgCurrentShowGet()
 
-Get the current on-air show.
+Get the current on-air shows.
 
 ### Example
 ```php
