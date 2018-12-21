@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *SongApi* | [**songCurrentSongPut**](docs/Api/SongApi.md#songcurrentsongput) | **PUT** /Song/CurrentSong | [INTERNAL] Save the current song to the API.
 *SongApi* | [**songPlaylistGet**](docs/Api/SongApi.md#songplaylistget) | **GET** /Song/Playlist | Get the playlist of a station.
 *SongApi* | [**songStationsPut**](docs/Api/SongApi.md#songstationsput) | **PUT** /Song/Station | [INTERNAL] Save the station to the API.
+*StationApi* | [**stationBroadcastByIdGet**](docs/Api/StationApi.md#stationbroadcastbyidget) | **GET** /Station/BroadcastById | Get a specific broadcast, and all the available information for that broadcast
 *StationApi* | [**stationPresenterByIdGet**](docs/Api/StationApi.md#stationpresenterbyidget) | **GET** /Station/PresenterById | Get a specific presenter by its unique id.
 *StationApi* | [**stationPresenterListGet**](docs/Api/StationApi.md#stationpresenterlistget) | **GET** /Station/PresenterList | Get a list of all active presenters of the station.
 *StationApi* | [**stationProgramByIdGet**](docs/Api/StationApi.md#stationprogrambyidget) | **GET** /Station/ProgramById | Get a specific program, and all the available information for that program
@@ -133,6 +134,7 @@ Class | Method | HTTP request | Description
  - [SongMetadata](docs/Model/SongMetadata.md)
  - [SongPlaylist](docs/Model/SongPlaylist.md)
  - [Station](docs/Model/Station.md)
+ - [StationBroadcastById](docs/Model/StationBroadcastById.md)
  - [StationPresenterById](docs/Model/StationPresenterById.md)
  - [StationPresenterList](docs/Model/StationPresenterList.md)
  - [StationProgramById](docs/Model/StationProgramById.md)
