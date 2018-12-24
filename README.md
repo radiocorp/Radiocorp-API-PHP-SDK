@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *EPGApi* | [**epgCurrentShowGet**](docs/Api/EPGApi.md#epgcurrentshowget) | **GET** /Epg/CurrentShow | Get the current on-air show.
 *EPGApi* | [**epgNextShowGet**](docs/Api/EPGApi.md#epgnextshowget) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 *EPGApi* | [**epgWeeklyEpgGet**](docs/Api/EPGApi.md#epgweeklyepgget) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
+*MessagesApi* | [**messagesListGet**](docs/Api/MessagesApi.md#messageslistget) | **GET** /Messages/List | [INTERNAL] Get the messages for this station based on filters defined down here.
 *NewsApi* | [**newsNewsReaderGet**](docs/Api/NewsApi.md#newsnewsreaderget) | **GET** /News/NewsReader | Get the current NewsReader.
 *NewsApi* | [**newsWeatherGet**](docs/Api/NewsApi.md#newsweatherget) | **GET** /News/Weather | Get the last Wheather.
 *RadioManagerApi* | [**radiomanagerPushPost**](docs/Api/RadioManagerApi.md#radiomanagerpushpost) | **POST** /Radiomanager/Push | [INTERNAL] RadioManager pushes it&#39;s changes to this endpoint
@@ -111,6 +112,11 @@ Class | Method | HTTP request | Description
  - [EpgDay](docs/Model/EpgDay.md)
  - [EpgShow](docs/Model/EpgShow.md)
  - [EpgWeekly](docs/Model/EpgWeekly.md)
+ - [Message](docs/Model/Message.md)
+ - [MessageAttachment](docs/Model/MessageAttachment.md)
+ - [MessageContact](docs/Model/MessageContact.md)
+ - [MessageReceived](docs/Model/MessageReceived.md)
+ - [MessagesList](docs/Model/MessagesList.md)
  - [NewsNewsReader](docs/Model/NewsNewsReader.md)
  - [NewsReader](docs/Model/NewsReader.md)
  - [NewsWeather](docs/Model/NewsWeather.md)
