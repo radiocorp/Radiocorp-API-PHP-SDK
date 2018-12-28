@@ -671,7 +671,7 @@ class MessagesApi
      *
      * [INTERNAL] Reply to a message
      *
-     * @param  \RadioCorp\Model\MessageReply $message_reply Pet object that needs to be added to the store (required)
+     * @param  \RadioCorp\Model\MessageReply $message_reply The message to be sent (required)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -688,7 +688,7 @@ class MessagesApi
      *
      * [INTERNAL] Reply to a message
      *
-     * @param  \RadioCorp\Model\MessageReply $message_reply Pet object that needs to be added to the store (required)
+     * @param  \RadioCorp\Model\MessageReply $message_reply The message to be sent (required)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -776,7 +776,7 @@ class MessagesApi
      *
      * [INTERNAL] Reply to a message
      *
-     * @param  \RadioCorp\Model\MessageReply $message_reply Pet object that needs to be added to the store (required)
+     * @param  \RadioCorp\Model\MessageReply $message_reply The message to be sent (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -796,7 +796,7 @@ class MessagesApi
      *
      * [INTERNAL] Reply to a message
      *
-     * @param  \RadioCorp\Model\MessageReply $message_reply Pet object that needs to be added to the store (required)
+     * @param  \RadioCorp\Model\MessageReply $message_reply The message to be sent (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -843,7 +843,7 @@ class MessagesApi
     /**
      * Create request for operation 'messagesReplyPost'
      *
-     * @param  \RadioCorp\Model\MessageReply $message_reply Pet object that needs to be added to the store (required)
+     * @param  \RadioCorp\Model\MessageReply $message_reply The message to be sent (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

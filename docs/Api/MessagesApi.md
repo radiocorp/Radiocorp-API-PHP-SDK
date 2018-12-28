@@ -146,7 +146,7 @@ $apiInstance = new RadioCorp\Api\MessagesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$message_reply = new \RadioCorp\Model\MessageReply(); // \RadioCorp\Model\MessageReply | Pet object that needs to be added to the store
+$message_reply = new \RadioCorp\Model\MessageReply(); // \RadioCorp\Model\MessageReply | The message to be sent
 
 try {
     $result = $apiInstance->messagesReplyPost($message_reply);
@@ -161,7 +161,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **message_reply** | [**\RadioCorp\Model\MessageReply**](../Model/MessageReply.md)| Pet object that needs to be added to the store |
+ **message_reply** | [**\RadioCorp\Model\MessageReply**](../Model/MessageReply.md)| The message to be sent |
 
 ### Return type
 

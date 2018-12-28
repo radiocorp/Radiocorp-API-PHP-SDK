@@ -235,7 +235,7 @@ class MessageReply implements ModelInterface, ArrayAccess
     /**
      * Sets parent_id
      *
-     * @param int|null $parent_id parent_id
+     * @param int|null $parent_id ID of the message you are reply-ing to
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class MessageReply implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type type
+     * @param string|null $type Type of message you reply to (currently only sms is supported)
      *
      * @return $this
      */
@@ -283,7 +283,7 @@ class MessageReply implements ModelInterface, ArrayAccess
     /**
      * Sets receiver
      *
-     * @param string|null $receiver receiver
+     * @param string|null $receiver MSISDN of the receiver in international format
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class MessageReply implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param string|null $message message
+     * @param string|null $message The message body
      *
      * @return $this
      */
