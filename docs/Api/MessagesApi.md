@@ -4,8 +4,64 @@ All URIs are relative to *https://api.dev.radiocorp.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**messagesConversationGet**](MessagesApi.md#messagesConversationGet) | **GET** /Messages/Conversation | [INTERNAL] Get the conversation based on a message hash
 [**messagesListGet**](MessagesApi.md#messagesListGet) | **GET** /Messages/List | [INTERNAL] Get the messages for this station based on filters defined down here.
 
+
+# **messagesConversationGet**
+> \RadioCorp\Model\MessagesList messagesConversationGet($hash, $page)
+
+[INTERNAL] Get the conversation based on a message hash
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api_key
+$config = RadioCorp\Configuration::getDefaultConfiguration()->setApiKey('X-Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = RadioCorp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Api-Key', 'Bearer');
+
+$apiInstance = new RadioCorp\Api\MessagesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$hash = ead1b12e47ec7cc5390303831b779d47; // string | The hash where you want the conversation for
+$page = ead1b12e47ec7cc5390303831b779d47; // string | The page you want to retreive
+
+try {
+    $result = $apiInstance->messagesConversationGet($hash, $page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MessagesApi->messagesConversationGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hash** | **string**| The hash where you want the conversation for | [optional]
+ **page** | **string**| The page you want to retreive | [optional]
+
+### Return type
+
+[**\RadioCorp\Model\MessagesList**](../Model/MessagesList.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **messagesListGet**
 > \RadioCorp\Model\MessagesList messagesListGet($last_msg, $msgs, $limit, $sincedate, $todate)
