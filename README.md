@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 *EPGApi* | [**epgWeeklyEpgGet**](docs/Api/EPGApi.md#epgweeklyepgget) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
 *MessagesApi* | [**messagesConversationGet**](docs/Api/MessagesApi.md#messagesconversationget) | **GET** /Messages/Conversation | [INTERNAL] Get the conversation based on a message hash
 *MessagesApi* | [**messagesListGet**](docs/Api/MessagesApi.md#messageslistget) | **GET** /Messages/List | [INTERNAL] Get the messages for this station based on filters defined down here.
+*MessagesApi* | [**messagesReplyPost**](docs/Api/MessagesApi.md#messagesreplypost) | **POST** /Messages/Reply | [INTERNAL] Reply to a message
 *NewsApi* | [**newsNewsReaderGet**](docs/Api/NewsApi.md#newsnewsreaderget) | **GET** /News/NewsReader | Get the current NewsReader.
 *NewsApi* | [**newsWeatherGet**](docs/Api/NewsApi.md#newsweatherget) | **GET** /News/Weather | Get the last Wheather.
 *RadioManagerApi* | [**radiomanagerPushPost**](docs/Api/RadioManagerApi.md#radiomanagerpushpost) | **POST** /Radiomanager/Push | [INTERNAL] RadioManager pushes it&#39;s changes to this endpoint
@@ -117,6 +118,7 @@ Class | Method | HTTP request | Description
  - [MessageAttachment](docs/Model/MessageAttachment.md)
  - [MessageContact](docs/Model/MessageContact.md)
  - [MessageReceived](docs/Model/MessageReceived.md)
+ - [MessageReply](docs/Model/MessageReply.md)
  - [MessagesList](docs/Model/MessagesList.md)
  - [NewsNewsReader](docs/Model/NewsNewsReader.md)
  - [NewsReader](docs/Model/NewsReader.md)
