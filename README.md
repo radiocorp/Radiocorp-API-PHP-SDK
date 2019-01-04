@@ -86,6 +86,7 @@ All URIs are relative to *https://api.dev.radiocorp.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EPGApi* | [**epgCurrentShowGet**](docs/Api/EPGApi.md#epgcurrentshowget) | **GET** /Epg/CurrentShow | Get the current on-air show.
+*EPGApi* | [**epgNextHourGet**](docs/Api/EPGApi.md#epgnexthourget) | **GET** /Epg/nextHour | Get the show which aires the next hour.
 *EPGApi* | [**epgNextShowGet**](docs/Api/EPGApi.md#epgnextshowget) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 *EPGApi* | [**epgWeeklyEpgGet**](docs/Api/EPGApi.md#epgweeklyepgget) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
 *MessagesApi* | [**messagesConversationGet**](docs/Api/MessagesApi.md#messagesconversationget) | **GET** /Messages/Conversation | [INTERNAL] Get the conversation based on a message hash
