@@ -81,13 +81,17 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.dev.radiocorp.io*
+All URIs are relative to *https://api.radiocorp.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EPGApi* | [**epgCurrentShowGet**](docs/Api/EPGApi.md#epgcurrentshowget) | **GET** /Epg/CurrentShow | Get the current on-air show.
+*EPGApi* | [**epgNextHourGet**](docs/Api/EPGApi.md#epgnexthourget) | **GET** /Epg/nextHour | Get the show which aires the next hour.
 *EPGApi* | [**epgNextShowGet**](docs/Api/EPGApi.md#epgnextshowget) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 *EPGApi* | [**epgWeeklyEpgGet**](docs/Api/EPGApi.md#epgweeklyepgget) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
+*MessagesApi* | [**messagesConversationGet**](docs/Api/MessagesApi.md#messagesconversationget) | **GET** /Messages/Conversation | [INTERNAL] Get the conversation based on a message hash
+*MessagesApi* | [**messagesListGet**](docs/Api/MessagesApi.md#messageslistget) | **GET** /Messages/List | [INTERNAL] Get the messages for this station based on filters defined down here.
+*MessagesApi* | [**messagesReplyPost**](docs/Api/MessagesApi.md#messagesreplypost) | **POST** /Messages/Reply | [INTERNAL] Reply to a message
 *NewsApi* | [**newsNewsReaderGet**](docs/Api/NewsApi.md#newsnewsreaderget) | **GET** /News/NewsReader | Get the current NewsReader.
 *NewsApi* | [**newsWeatherGet**](docs/Api/NewsApi.md#newsweatherget) | **GET** /News/Weather | Get the last Wheather.
 *RadioManagerApi* | [**radiomanagerPushPost**](docs/Api/RadioManagerApi.md#radiomanagerpushpost) | **POST** /Radiomanager/Push | [INTERNAL] RadioManager pushes it&#39;s changes to this endpoint
@@ -97,6 +101,7 @@ Class | Method | HTTP request | Description
 *SongApi* | [**songCurrentSongPut**](docs/Api/SongApi.md#songcurrentsongput) | **PUT** /Song/CurrentSong | [INTERNAL] Save the current song to the API.
 *SongApi* | [**songPlaylistGet**](docs/Api/SongApi.md#songplaylistget) | **GET** /Song/Playlist | Get the playlist of a station.
 *SongApi* | [**songStationsPut**](docs/Api/SongApi.md#songstationsput) | **PUT** /Song/Station | [INTERNAL] Save the station to the API.
+*StationApi* | [**stationBroadcastByIdGet**](docs/Api/StationApi.md#stationbroadcastbyidget) | **GET** /Station/BroadcastById | Get a specific broadcast, and all the available information for that broadcast
 *StationApi* | [**stationPresenterByIdGet**](docs/Api/StationApi.md#stationpresenterbyidget) | **GET** /Station/PresenterById | Get a specific presenter by its unique id.
 *StationApi* | [**stationPresenterListGet**](docs/Api/StationApi.md#stationpresenterlistget) | **GET** /Station/PresenterList | Get a list of all active presenters of the station.
 *StationApi* | [**stationProgramByIdGet**](docs/Api/StationApi.md#stationprogrambyidget) | **GET** /Station/ProgramById | Get a specific program, and all the available information for that program
@@ -110,6 +115,12 @@ Class | Method | HTTP request | Description
  - [EpgDay](docs/Model/EpgDay.md)
  - [EpgShow](docs/Model/EpgShow.md)
  - [EpgWeekly](docs/Model/EpgWeekly.md)
+ - [Message](docs/Model/Message.md)
+ - [MessageAttachment](docs/Model/MessageAttachment.md)
+ - [MessageContact](docs/Model/MessageContact.md)
+ - [MessageReceived](docs/Model/MessageReceived.md)
+ - [MessageReply](docs/Model/MessageReply.md)
+ - [MessagesList](docs/Model/MessagesList.md)
  - [NewsNewsReader](docs/Model/NewsNewsReader.md)
  - [NewsReader](docs/Model/NewsReader.md)
  - [NewsWeather](docs/Model/NewsWeather.md)
@@ -133,6 +144,7 @@ Class | Method | HTTP request | Description
  - [SongMetadata](docs/Model/SongMetadata.md)
  - [SongPlaylist](docs/Model/SongPlaylist.md)
  - [Station](docs/Model/Station.md)
+ - [StationBroadcastById](docs/Model/StationBroadcastById.md)
  - [StationPresenterById](docs/Model/StationPresenterById.md)
  - [StationPresenterList](docs/Model/StationPresenterList.md)
  - [StationProgramById](docs/Model/StationProgramById.md)

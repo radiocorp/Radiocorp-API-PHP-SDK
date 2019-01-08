@@ -11,7 +11,7 @@
  */
 
 /**
- * Public RadioCorp API [Development]
+ * Public RadioCorp API
  *
  * Public/Private API for accessing RadioCorp recources through custom applications.\\ At the moment only available for the stations 100% NL, SLAM! and SLAM!TV ### Available formats ### Available formats (based on the 'Accept' header):\\ json, array, csv, html, jsonp, php, serialized, xml\\ The API defaults to application/json when no header supplied. ### Contact / License ###
  *
@@ -64,8 +64,8 @@ class BroadcastItem extends ProgramCompact
         'header' => '\RadioCorp\Model\ProgramHeader',
         'presenters' => '\RadioCorp\Model\Presenter[]',
         'broadcast_id' => 'int',
-        'start' => 'object',
-        'stop' => 'object'
+        'start' => '\DateTime',
+        'stop' => '\DateTime'
     ];
 
     /**
@@ -83,8 +83,8 @@ class BroadcastItem extends ProgramCompact
         'header' => null,
         'presenters' => null,
         'broadcast_id' => 'int32',
-        'start' => null,
-        'stop' => null
+        'start' => 'date',
+        'stop' => 'date'
     ];
 
     /**
@@ -511,7 +511,7 @@ class BroadcastItem extends ProgramCompact
     /**
      * Gets start
      *
-     * @return object|null
+     * @return \DateTime|null
      */
     public function getStart()
     {
@@ -521,7 +521,7 @@ class BroadcastItem extends ProgramCompact
     /**
      * Sets start
      *
-     * @param object|null $start start
+     * @param \DateTime|null $start start
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class BroadcastItem extends ProgramCompact
     /**
      * Gets stop
      *
-     * @return object|null
+     * @return \DateTime|null
      */
     public function getStop()
     {
@@ -545,7 +545,7 @@ class BroadcastItem extends ProgramCompact
     /**
      * Sets stop
      *
-     * @param object|null $stop stop
+     * @param \DateTime|null $stop stop
      *
      * @return $this
      */
