@@ -11,7 +11,7 @@
  */
 
 /**
- * Public RadioCorp API
+ * Public RadioCorp API [Development]
  *
  * Public/Private API for accessing RadioCorp recources through custom applications.\\ At the moment only available for the stations 100% NL, SLAM! and SLAM!TV ### Available formats ### Available formats (based on the 'Accept' header):\\ json, array, csv, html, jsonp, php, serialized, xml\\ The API defaults to application/json when no header supplied. ### Contact / License ###
  *
@@ -209,6 +209,7 @@ class BroadcastItem extends ProgramCompact
     const TYPE_LIVE = 'live';
     const TYPE_NONSTOP = 'nonstop';
     const TYPE_RECORDED = 'recorded';
+    const TYPE_VISUALRADIO = 'visualradio';
     
 
     
@@ -223,6 +224,7 @@ class BroadcastItem extends ProgramCompact
             self::TYPE_LIVE,
             self::TYPE_NONSTOP,
             self::TYPE_RECORDED,
+            self::TYPE_VISUALRADIO,
         ];
     }
     
