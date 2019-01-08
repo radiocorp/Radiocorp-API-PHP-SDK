@@ -81,7 +81,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.dev.radiocorp.io*
+All URIs are relative to *https://api.radiocorp.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

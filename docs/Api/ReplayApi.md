@@ -1,6 +1,6 @@
 # RadioCorp\ReplayApi
 
-All URIs are relative to *https://api.dev.radiocorp.io*
+All URIs are relative to *https://api.radiocorp.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
