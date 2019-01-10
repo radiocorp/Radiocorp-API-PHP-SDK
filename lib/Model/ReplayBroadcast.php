@@ -204,6 +204,7 @@ class ReplayBroadcast extends ProgramCompact
     const TYPE_LIVE = 'live';
     const TYPE_NONSTOP = 'nonstop';
     const TYPE_RECORDED = 'recorded';
+    const TYPE_VISUALRADIO = 'visualradio';
     
 
     
@@ -218,6 +219,7 @@ class ReplayBroadcast extends ProgramCompact
             self::TYPE_LIVE,
             self::TYPE_NONSTOP,
             self::TYPE_RECORDED,
+            self::TYPE_VISUALRADIO,
         ];
     }
     

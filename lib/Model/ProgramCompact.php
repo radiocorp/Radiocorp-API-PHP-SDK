@@ -176,6 +176,7 @@ class ProgramCompact implements ModelInterface, ArrayAccess
     const TYPE_LIVE = 'live';
     const TYPE_NONSTOP = 'nonstop';
     const TYPE_RECORDED = 'recorded';
+    const TYPE_VISUALRADIO = 'visualradio';
     
 
     
@@ -190,6 +191,7 @@ class ProgramCompact implements ModelInterface, ArrayAccess
             self::TYPE_LIVE,
             self::TYPE_NONSTOP,
             self::TYPE_RECORDED,
+            self::TYPE_VISUALRADIO,
         ];
     }
     
