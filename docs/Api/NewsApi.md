@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **newsWeatherGet**
-> \RadioCorp\Model\NewsWeather newsWeatherGet()
+> \RadioCorp\Model\NewsWeather newsWeatherGet($provider)
 
 Get the last Wheather.
 
@@ -78,9 +78,10 @@ $apiInstance = new RadioCorp\Api\NewsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$provider = anp; // string | From which provider do you want to load the bulletin, possible values are 'anp' or 'weeronline'
 
 try {
-    $result = $apiInstance->newsWeatherGet();
+    $result = $apiInstance->newsWeatherGet($provider);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->newsWeatherGet: ', $e->getMessage(), PHP_EOL;
@@ -89,7 +90,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider** | **string**| From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; | [optional]
 
 ### Return type
 
