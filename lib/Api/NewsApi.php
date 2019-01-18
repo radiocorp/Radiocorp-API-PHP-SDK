@@ -350,14 +350,15 @@ class NewsApi
      *
      * Get the last Wheather.
      *
+     * @param  string $provider From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; (optional)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \RadioCorp\Model\NewsWeather
      */
-    public function newsWeatherGet()
+    public function newsWeatherGet($provider = null)
     {
-        list($response) = $this->newsWeatherGetWithHttpInfo();
+        list($response) = $this->newsWeatherGetWithHttpInfo($provider);
         return $response;
     }
 
@@ -366,14 +367,15 @@ class NewsApi
      *
      * Get the last Wheather.
      *
+     * @param  string $provider From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; (optional)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \RadioCorp\Model\NewsWeather, HTTP status code, HTTP response headers (array of strings)
      */
-    public function newsWeatherGetWithHttpInfo()
+    public function newsWeatherGetWithHttpInfo($provider = null)
     {
-        $request = $this->newsWeatherGetRequest();
+        $request = $this->newsWeatherGetRequest($provider);
 
         try {
             $options = $this->createHttpClientOption();
@@ -453,13 +455,14 @@ class NewsApi
      *
      * Get the last Wheather.
      *
+     * @param  string $provider From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function newsWeatherGetAsync()
+    public function newsWeatherGetAsync($provider = null)
     {
-        return $this->newsWeatherGetAsyncWithHttpInfo()
+        return $this->newsWeatherGetAsyncWithHttpInfo($provider)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -472,14 +475,15 @@ class NewsApi
      *
      * Get the last Wheather.
      *
+     * @param  string $provider From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function newsWeatherGetAsyncWithHttpInfo()
+    public function newsWeatherGetAsyncWithHttpInfo($provider = null)
     {
         $returnType = '\RadioCorp\Model\NewsWeather';
-        $request = $this->newsWeatherGetRequest();
+        $request = $this->newsWeatherGetRequest($provider);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -518,11 +522,12 @@ class NewsApi
     /**
      * Create request for operation 'newsWeatherGet'
      *
+     * @param  string $provider From which provider do you want to load the bulletin, possible values are &#39;anp&#39; or &#39;weeronline&#39; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function newsWeatherGetRequest()
+    protected function newsWeatherGetRequest($provider = null)
     {
 
         $resourcePath = '/News/Weather';
@@ -532,6 +537,10 @@ class NewsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($provider !== null) {
+            $queryParams['provider'] = ObjectSerializer::toQueryValue($provider);
+        }
 
 
         // body params
