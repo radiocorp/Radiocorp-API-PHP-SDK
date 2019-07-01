@@ -1,6 +1,6 @@
 <?php
 /**
- * Presenter
+ * ProgramImages
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \RadioCorp\ObjectSerializer;
 
 /**
- * Presenter Class Doc Comment
+ * ProgramImages Class Doc Comment
  *
  * @category Class
  * @package  RadioCorp
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Presenter implements ModelInterface, ArrayAccess
+class ProgramImages implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Presenter implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Presenter';
+    protected static $openAPIModelName = 'ProgramImages';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,9 @@ class Presenter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'presenter_id' => 'int',
-        'fullname' => 'string',
-        'short_name' => 'string',
-        'info' => '\RadioCorp\Model\PresenterInfo',
-        'header' => '\RadioCorp\Model\PresenterHeader',
-        'images' => '\RadioCorp\Model\PresenterImages'
+        'header' => 'string',
+        'vertical' => 'string',
+        'block' => 'string'
     ];
 
     /**
@@ -71,12 +68,9 @@ class Presenter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'presenter_id' => 'int32',
-        'fullname' => null,
-        'short_name' => null,
-        'info' => null,
         'header' => null,
-        'images' => null
+        'vertical' => null,
+        'block' => null
     ];
 
     /**
@@ -106,12 +100,9 @@ class Presenter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'presenter_id' => 'presenter_id',
-        'fullname' => 'fullname',
-        'short_name' => 'short_name',
-        'info' => 'info',
         'header' => 'header',
-        'images' => 'images'
+        'vertical' => 'vertical',
+        'block' => 'block'
     ];
 
     /**
@@ -120,12 +111,9 @@ class Presenter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'presenter_id' => 'setPresenterId',
-        'fullname' => 'setFullname',
-        'short_name' => 'setShortName',
-        'info' => 'setInfo',
         'header' => 'setHeader',
-        'images' => 'setImages'
+        'vertical' => 'setVertical',
+        'block' => 'setBlock'
     ];
 
     /**
@@ -134,12 +122,9 @@ class Presenter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'presenter_id' => 'getPresenterId',
-        'fullname' => 'getFullname',
-        'short_name' => 'getShortName',
-        'info' => 'getInfo',
         'header' => 'getHeader',
-        'images' => 'getImages'
+        'vertical' => 'getVertical',
+        'block' => 'getBlock'
     ];
 
     /**
@@ -202,12 +187,9 @@ class Presenter implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['presenter_id'] = isset($data['presenter_id']) ? $data['presenter_id'] : null;
-        $this->container['fullname'] = isset($data['fullname']) ? $data['fullname'] : null;
-        $this->container['short_name'] = isset($data['short_name']) ? $data['short_name'] : null;
-        $this->container['info'] = isset($data['info']) ? $data['info'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
-        $this->container['images'] = isset($data['images']) ? $data['images'] : null;
+        $this->container['vertical'] = isset($data['vertical']) ? $data['vertical'] : null;
+        $this->container['block'] = isset($data['block']) ? $data['block'] : null;
     }
 
     /**
@@ -235,105 +217,9 @@ class Presenter implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets presenter_id
-     *
-     * @return int|null
-     */
-    public function getPresenterId()
-    {
-        return $this->container['presenter_id'];
-    }
-
-    /**
-     * Sets presenter_id
-     *
-     * @param int|null $presenter_id presenter_id
-     *
-     * @return $this
-     */
-    public function setPresenterId($presenter_id)
-    {
-        $this->container['presenter_id'] = $presenter_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets fullname
-     *
-     * @return string|null
-     */
-    public function getFullname()
-    {
-        return $this->container['fullname'];
-    }
-
-    /**
-     * Sets fullname
-     *
-     * @param string|null $fullname fullname
-     *
-     * @return $this
-     */
-    public function setFullname($fullname)
-    {
-        $this->container['fullname'] = $fullname;
-
-        return $this;
-    }
-
-    /**
-     * Gets short_name
-     *
-     * @return string|null
-     */
-    public function getShortName()
-    {
-        return $this->container['short_name'];
-    }
-
-    /**
-     * Sets short_name
-     *
-     * @param string|null $short_name short_name
-     *
-     * @return $this
-     */
-    public function setShortName($short_name)
-    {
-        $this->container['short_name'] = $short_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets info
-     *
-     * @return \RadioCorp\Model\PresenterInfo|null
-     */
-    public function getInfo()
-    {
-        return $this->container['info'];
-    }
-
-    /**
-     * Sets info
-     *
-     * @param \RadioCorp\Model\PresenterInfo|null $info info
-     *
-     * @return $this
-     */
-    public function setInfo($info)
-    {
-        $this->container['info'] = $info;
-
-        return $this;
-    }
-
-    /**
      * Gets header
      *
-     * @return \RadioCorp\Model\PresenterHeader|null
+     * @return string|null
      */
     public function getHeader()
     {
@@ -343,7 +229,7 @@ class Presenter implements ModelInterface, ArrayAccess
     /**
      * Sets header
      *
-     * @param \RadioCorp\Model\PresenterHeader|null $header header
+     * @param string|null $header URL to header image (840x210px)
      *
      * @return $this
      */
@@ -355,25 +241,49 @@ class Presenter implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets images
+     * Gets vertical
      *
-     * @return \RadioCorp\Model\PresenterImages|null
+     * @return string|null
      */
-    public function getImages()
+    public function getVertical()
     {
-        return $this->container['images'];
+        return $this->container['vertical'];
     }
 
     /**
-     * Sets images
+     * Sets vertical
      *
-     * @param \RadioCorp\Model\PresenterImages|null $images images
+     * @param string|null $vertical URL to vertical image (300x540px)
      *
      * @return $this
      */
-    public function setImages($images)
+    public function setVertical($vertical)
     {
-        $this->container['images'] = $images;
+        $this->container['vertical'] = $vertical;
+
+        return $this;
+    }
+
+    /**
+     * Gets block
+     *
+     * @return string|null
+     */
+    public function getBlock()
+    {
+        return $this->container['block'];
+    }
+
+    /**
+     * Sets block
+     *
+     * @param string|null $block URL to block image (290x290px)
+     *
+     * @return $this
+     */
+    public function setBlock($block)
+    {
+        $this->container['block'] = $block;
 
         return $this;
     }

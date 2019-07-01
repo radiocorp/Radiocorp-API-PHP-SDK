@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **station** | [**\RadioCorp\Model\Station**](Station.md) |  | [optional] 
 **info** | [**\RadioCorp\Model\ProgramInfo**](ProgramInfo.md) |  | [optional] 
 **header** | [**\RadioCorp\Model\ProgramHeader**](ProgramHeader.md) |  | [optional] 
+**images** | [**\RadioCorp\Model\ProgramImages**](ProgramImages.md) |  | [optional] 
 **presenters** | [**\RadioCorp\Model\Presenter[]**](Presenter.md) |  | [optional] 
 **broadcast_id** | **int** |  | [optional] 
 **start** | [**\DateTime**](\DateTime.md) |  | [optional] 

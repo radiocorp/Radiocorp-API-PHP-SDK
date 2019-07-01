@@ -57,8 +57,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'photo' => 'string',
-        'biography' => 'string'
+        'biography' => 'string',
+        'biography_plain' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'photo' => null,
-        'biography' => null
+        'biography' => null,
+        'biography_plain' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'photo' => 'photo',
-        'biography' => 'biography'
+        'biography' => 'biography',
+        'biography_plain' => 'biography_plain'
     ];
 
     /**
@@ -108,8 +108,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'photo' => 'setPhoto',
-        'biography' => 'setBiography'
+        'biography' => 'setBiography',
+        'biography_plain' => 'setBiographyPlain'
     ];
 
     /**
@@ -118,8 +118,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'photo' => 'getPhoto',
-        'biography' => 'getBiography'
+        'biography' => 'getBiography',
+        'biography_plain' => 'getBiographyPlain'
     ];
 
     /**
@@ -182,8 +182,8 @@ class PresenterInfo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['photo'] = isset($data['photo']) ? $data['photo'] : null;
         $this->container['biography'] = isset($data['biography']) ? $data['biography'] : null;
+        $this->container['biography_plain'] = isset($data['biography_plain']) ? $data['biography_plain'] : null;
     }
 
     /**
@@ -211,30 +211,6 @@ class PresenterInfo implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets photo
-     *
-     * @return string|null
-     */
-    public function getPhoto()
-    {
-        return $this->container['photo'];
-    }
-
-    /**
-     * Sets photo
-     *
-     * @param string|null $photo photo
-     *
-     * @return $this
-     */
-    public function setPhoto($photo)
-    {
-        $this->container['photo'] = $photo;
-
-        return $this;
-    }
-
-    /**
      * Gets biography
      *
      * @return string|null
@@ -254,6 +230,30 @@ class PresenterInfo implements ModelInterface, ArrayAccess
     public function setBiography($biography)
     {
         $this->container['biography'] = $biography;
+
+        return $this;
+    }
+
+    /**
+     * Gets biography_plain
+     *
+     * @return string|null
+     */
+    public function getBiographyPlain()
+    {
+        return $this->container['biography_plain'];
+    }
+
+    /**
+     * Sets biography_plain
+     *
+     * @param string|null $biography_plain biography_plain
+     *
+     * @return $this
+     */
+    public function setBiographyPlain($biography_plain)
+    {
+        $this->container['biography_plain'] = $biography_plain;
 
         return $this;
     }

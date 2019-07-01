@@ -68,12 +68,13 @@ $apiInstance = new RadioCorp\Api\EPGApi(
     new GuzzleHttp\Client(),
     $config
 );
+$starttime = 2018-11-20 00:00:00; // string | DateTime for which hour you want the broadcast
 
 try {
-    $result = $apiInstance->epgCurrentShowGet();
+    $result = $apiInstance->epgBroadcastByTimeGet($starttime);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EPGApi->epgCurrentShowGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EPGApi->epgBroadcastByTimeGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -85,13 +86,11 @@ All URIs are relative to *https://api.radiocorp.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*EPGApi* | [**epgBroadcastByTimeGet**](docs/Api/EPGApi.md#epgbroadcastbytimeget) | **GET** /Epg/broadcastByTime | Get the show which aires at a specific time.
 *EPGApi* | [**epgCurrentShowGet**](docs/Api/EPGApi.md#epgcurrentshowget) | **GET** /Epg/CurrentShow | Get the current on-air show.
 *EPGApi* | [**epgNextHourGet**](docs/Api/EPGApi.md#epgnexthourget) | **GET** /Epg/nextHour | Get the show which aires the next hour.
 *EPGApi* | [**epgNextShowGet**](docs/Api/EPGApi.md#epgnextshowget) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 *EPGApi* | [**epgWeeklyEpgGet**](docs/Api/EPGApi.md#epgweeklyepgget) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
-*MessagesApi* | [**messagesConversationGet**](docs/Api/MessagesApi.md#messagesconversationget) | **GET** /Messages/Conversation | [INTERNAL] Get the conversation based on a message hash
-*MessagesApi* | [**messagesListGet**](docs/Api/MessagesApi.md#messageslistget) | **GET** /Messages/List | [INTERNAL] Get the messages for this station based on filters defined down here.
-*MessagesApi* | [**messagesReplyPost**](docs/Api/MessagesApi.md#messagesreplypost) | **POST** /Messages/Reply | [INTERNAL] Reply to a message
 *NewsApi* | [**newsNewsReaderGet**](docs/Api/NewsApi.md#newsnewsreaderget) | **GET** /News/NewsReader | Get the current NewsReader.
 *NewsApi* | [**newsWeatherGet**](docs/Api/NewsApi.md#newsweatherget) | **GET** /News/Weather | Get the last Wheather.
 *RadioManagerApi* | [**radiomanagerPushPost**](docs/Api/RadioManagerApi.md#radiomanagerpushpost) | **POST** /Radiomanager/Push | [INTERNAL] RadioManager pushes it&#39;s changes to this endpoint
@@ -115,12 +114,6 @@ Class | Method | HTTP request | Description
  - [EpgDay](docs/Model/EpgDay.md)
  - [EpgShow](docs/Model/EpgShow.md)
  - [EpgWeekly](docs/Model/EpgWeekly.md)
- - [Message](docs/Model/Message.md)
- - [MessageAttachment](docs/Model/MessageAttachment.md)
- - [MessageContact](docs/Model/MessageContact.md)
- - [MessageReceived](docs/Model/MessageReceived.md)
- - [MessageReply](docs/Model/MessageReply.md)
- - [MessagesList](docs/Model/MessagesList.md)
  - [NewsNewsReader](docs/Model/NewsNewsReader.md)
  - [NewsReader](docs/Model/NewsReader.md)
  - [NewsWeather](docs/Model/NewsWeather.md)
@@ -129,10 +122,12 @@ Class | Method | HTTP request | Description
  - [Presenter](docs/Model/Presenter.md)
  - [PresenterById](docs/Model/PresenterById.md)
  - [PresenterHeader](docs/Model/PresenterHeader.md)
+ - [PresenterImages](docs/Model/PresenterImages.md)
  - [PresenterInfo](docs/Model/PresenterInfo.md)
  - [ProgramCompact](docs/Model/ProgramCompact.md)
  - [ProgramFull](docs/Model/ProgramFull.md)
  - [ProgramHeader](docs/Model/ProgramHeader.md)
+ - [ProgramImages](docs/Model/ProgramImages.md)
  - [ProgramInfo](docs/Model/ProgramInfo.md)
  - [ReplayBroadcast](docs/Model/ReplayBroadcast.md)
  - [ReplayDaily](docs/Model/ReplayDaily.md)

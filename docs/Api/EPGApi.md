@@ -4,11 +4,65 @@ All URIs are relative to *https://api.radiocorp.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**epgBroadcastByTimeGet**](EPGApi.md#epgBroadcastByTimeGet) | **GET** /Epg/broadcastByTime | Get the show which aires at a specific time.
 [**epgCurrentShowGet**](EPGApi.md#epgCurrentShowGet) | **GET** /Epg/CurrentShow | Get the current on-air show.
 [**epgNextHourGet**](EPGApi.md#epgNextHourGet) | **GET** /Epg/nextHour | Get the show which aires the next hour.
 [**epgNextShowGet**](EPGApi.md#epgNextShowGet) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
 [**epgWeeklyEpgGet**](EPGApi.md#epgWeeklyEpgGet) | **GET** /Epg/weeklyEpg | Get the full Program Guide.
 
+
+# **epgBroadcastByTimeGet**
+> \RadioCorp\Model\EpgShow epgBroadcastByTimeGet($starttime)
+
+Get the show which aires at a specific time.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api_key
+$config = RadioCorp\Configuration::getDefaultConfiguration()->setApiKey('X-Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = RadioCorp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Api-Key', 'Bearer');
+
+$apiInstance = new RadioCorp\Api\EPGApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$starttime = 2018-11-20 00:00:00; // string | DateTime for which hour you want the broadcast
+
+try {
+    $result = $apiInstance->epgBroadcastByTimeGet($starttime);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EPGApi->epgBroadcastByTimeGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **starttime** | **string**| DateTime for which hour you want the broadcast | [optional]
+
+### Return type
+
+[**\RadioCorp\Model\EpgShow**](../Model/EpgShow.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **epgCurrentShowGet**
 > \RadioCorp\Model\EpgShow epgCurrentShowGet()

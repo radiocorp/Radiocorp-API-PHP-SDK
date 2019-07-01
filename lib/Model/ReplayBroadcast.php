@@ -62,6 +62,7 @@ class ReplayBroadcast extends ProgramCompact
         'station' => '\RadioCorp\Model\Station',
         'info' => '\RadioCorp\Model\ProgramInfo',
         'header' => '\RadioCorp\Model\ProgramHeader',
+        'images' => '\RadioCorp\Model\ProgramImages',
         'presenters' => '\RadioCorp\Model\Presenter[]',
         'replay' => '\RadioCorp\Model\ReplayHour[]',
         'items' => '\RadioCorp\Model\ReplayItem[]'
@@ -80,6 +81,7 @@ class ReplayBroadcast extends ProgramCompact
         'station' => null,
         'info' => null,
         'header' => null,
+        'images' => null,
         'presenters' => null,
         'replay' => null,
         'items' => null
@@ -119,6 +121,7 @@ class ReplayBroadcast extends ProgramCompact
         'station' => 'station',
         'info' => 'info',
         'header' => 'header',
+        'images' => 'images',
         'presenters' => 'presenters',
         'replay' => 'replay',
         'items' => 'items'
@@ -137,6 +140,7 @@ class ReplayBroadcast extends ProgramCompact
         'station' => 'setStation',
         'info' => 'setInfo',
         'header' => 'setHeader',
+        'images' => 'setImages',
         'presenters' => 'setPresenters',
         'replay' => 'setReplay',
         'items' => 'setItems'
@@ -155,6 +159,7 @@ class ReplayBroadcast extends ProgramCompact
         'station' => 'getStation',
         'info' => 'getInfo',
         'header' => 'getHeader',
+        'images' => 'getImages',
         'presenters' => 'getPresenters',
         'replay' => 'getReplay',
         'items' => 'getItems'
@@ -242,6 +247,7 @@ class ReplayBroadcast extends ProgramCompact
         $this->container['station'] = isset($data['station']) ? $data['station'] : null;
         $this->container['info'] = isset($data['info']) ? $data['info'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
+        $this->container['images'] = isset($data['images']) ? $data['images'] : null;
         $this->container['presenters'] = isset($data['presenters']) ? $data['presenters'] : null;
         $this->container['replay'] = isset($data['replay']) ? $data['replay'] : null;
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
@@ -452,6 +458,30 @@ class ReplayBroadcast extends ProgramCompact
     public function setHeader($header)
     {
         $this->container['header'] = $header;
+
+        return $this;
+    }
+
+    /**
+     * Gets images
+     *
+     * @return \RadioCorp\Model\ProgramImages|null
+     */
+    public function getImages()
+    {
+        return $this->container['images'];
+    }
+
+    /**
+     * Sets images
+     *
+     * @param \RadioCorp\Model\ProgramImages|null $images images
+     *
+     * @return $this
+     */
+    public function setImages($images)
+    {
+        $this->container['images'] = $images;
 
         return $this;
     }
