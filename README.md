@@ -87,6 +87,7 @@ All URIs are relative to *https://api.radiocorp.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EPGApi* | [**epgBroadcastByTimeGet**](docs/Api/EPGApi.md#epgbroadcastbytimeget) | **GET** /Epg/broadcastByTime | Get the show which aires at a specific time.
+*EPGApi* | [**epgChangesGet**](docs/Api/EPGApi.md#epgchangesget) | **GET** /Epg/changes | Get the changes for a selected period
 *EPGApi* | [**epgCurrentShowGet**](docs/Api/EPGApi.md#epgcurrentshowget) | **GET** /Epg/CurrentShow | Get the current on-air show.
 *EPGApi* | [**epgNextHourGet**](docs/Api/EPGApi.md#epgnexthourget) | **GET** /Epg/nextHour | Get the show which aires the next hour.
 *EPGApi* | [**epgNextShowGet**](docs/Api/EPGApi.md#epgnextshowget) | **GET** /Epg/nextShow | Get the next show which is gonna be aired.
