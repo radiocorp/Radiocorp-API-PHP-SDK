@@ -362,15 +362,14 @@ class EPGApi
      * @param  string $startdate Startdate of changes, in format (optional)
      * @param  string $enddate Enddate of changes, in format (optional)
      * @param  Datetime $since Since date time (optional, if provided changes since this datetime are returned) (optional)
-     * @param  bool $extended Include all Broadcast information in the response ( &#x3D; slower ) (optional)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \RadioCorp\Model\EpgWeekly
+     * @return \RadioCorp\Model\EpgChanges
      */
-    public function epgChangesGet($startdate = null, $enddate = null, $since = null, $extended = null)
+    public function epgChangesGet($startdate = null, $enddate = null, $since = null)
     {
-        list($response) = $this->epgChangesGetWithHttpInfo($startdate, $enddate, $since, $extended);
+        list($response) = $this->epgChangesGetWithHttpInfo($startdate, $enddate, $since);
         return $response;
     }
 
@@ -382,15 +381,14 @@ class EPGApi
      * @param  string $startdate Startdate of changes, in format (optional)
      * @param  string $enddate Enddate of changes, in format (optional)
      * @param  Datetime $since Since date time (optional, if provided changes since this datetime are returned) (optional)
-     * @param  bool $extended Include all Broadcast information in the response ( &#x3D; slower ) (optional)
      *
      * @throws \RadioCorp\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \RadioCorp\Model\EpgWeekly, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \RadioCorp\Model\EpgChanges, HTTP status code, HTTP response headers (array of strings)
      */
-    public function epgChangesGetWithHttpInfo($startdate = null, $enddate = null, $since = null, $extended = null)
+    public function epgChangesGetWithHttpInfo($startdate = null, $enddate = null, $since = null)
     {
-        $request = $this->epgChangesGetRequest($startdate, $enddate, $since, $extended);
+        $request = $this->epgChangesGetRequest($startdate, $enddate, $since);
 
         try {
             $options = $this->createHttpClientOption();
@@ -423,20 +421,20 @@ class EPGApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\RadioCorp\Model\EpgWeekly' === '\SplFileObject') {
+                    if ('\RadioCorp\Model\EpgChanges' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\RadioCorp\Model\EpgWeekly', []),
+                        ObjectSerializer::deserialize($content, '\RadioCorp\Model\EpgChanges', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\RadioCorp\Model\EpgWeekly';
+            $returnType = '\RadioCorp\Model\EpgChanges';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -455,7 +453,7 @@ class EPGApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RadioCorp\Model\EpgWeekly',
+                        '\RadioCorp\Model\EpgChanges',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,14 +471,13 @@ class EPGApi
      * @param  string $startdate Startdate of changes, in format (optional)
      * @param  string $enddate Enddate of changes, in format (optional)
      * @param  Datetime $since Since date time (optional, if provided changes since this datetime are returned) (optional)
-     * @param  bool $extended Include all Broadcast information in the response ( &#x3D; slower ) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function epgChangesGetAsync($startdate = null, $enddate = null, $since = null, $extended = null)
+    public function epgChangesGetAsync($startdate = null, $enddate = null, $since = null)
     {
-        return $this->epgChangesGetAsyncWithHttpInfo($startdate, $enddate, $since, $extended)
+        return $this->epgChangesGetAsyncWithHttpInfo($startdate, $enddate, $since)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -496,15 +493,14 @@ class EPGApi
      * @param  string $startdate Startdate of changes, in format (optional)
      * @param  string $enddate Enddate of changes, in format (optional)
      * @param  Datetime $since Since date time (optional, if provided changes since this datetime are returned) (optional)
-     * @param  bool $extended Include all Broadcast information in the response ( &#x3D; slower ) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function epgChangesGetAsyncWithHttpInfo($startdate = null, $enddate = null, $since = null, $extended = null)
+    public function epgChangesGetAsyncWithHttpInfo($startdate = null, $enddate = null, $since = null)
     {
-        $returnType = '\RadioCorp\Model\EpgWeekly';
-        $request = $this->epgChangesGetRequest($startdate, $enddate, $since, $extended);
+        $returnType = '\RadioCorp\Model\EpgChanges';
+        $request = $this->epgChangesGetRequest($startdate, $enddate, $since);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -546,12 +542,11 @@ class EPGApi
      * @param  string $startdate Startdate of changes, in format (optional)
      * @param  string $enddate Enddate of changes, in format (optional)
      * @param  Datetime $since Since date time (optional, if provided changes since this datetime are returned) (optional)
-     * @param  bool $extended Include all Broadcast information in the response ( &#x3D; slower ) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function epgChangesGetRequest($startdate = null, $enddate = null, $since = null, $extended = null)
+    protected function epgChangesGetRequest($startdate = null, $enddate = null, $since = null)
     {
 
         $resourcePath = '/Epg/changes';
@@ -572,10 +567,6 @@ class EPGApi
         // query params
         if ($since !== null) {
             $queryParams['since'] = ObjectSerializer::toQueryValue($since);
-        }
-        // query params
-        if ($extended !== null) {
-            $queryParams['extended'] = ObjectSerializer::toQueryValue($extended);
         }
 
 

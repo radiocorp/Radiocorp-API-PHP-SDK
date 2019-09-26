@@ -112,6 +112,8 @@ Class | Method | HTTP request | Description
 
  - [BroadcastItem](docs/Model/BroadcastItem.md)
  - [CurrentSong](docs/Model/CurrentSong.md)
+ - [EpgChange](docs/Model/EpgChange.md)
+ - [EpgChanges](docs/Model/EpgChanges.md)
  - [EpgDay](docs/Model/EpgDay.md)
  - [EpgShow](docs/Model/EpgShow.md)
  - [EpgWeekly](docs/Model/EpgWeekly.md)

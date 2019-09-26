@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **epgChangesGet**
-> \RadioCorp\Model\EpgWeekly epgChangesGet($startdate, $enddate, $since, $extended)
+> \RadioCorp\Model\EpgChanges epgChangesGet($startdate, $enddate, $since)
 
 Get the changes for a selected period
 
@@ -89,10 +89,9 @@ $apiInstance = new RadioCorp\Api\EPGApi(
 $startdate = 2018-11-20; // string | Startdate of changes, in format
 $enddate = 2018-11-20; // string | Enddate of changes, in format
 $since = 2019-09-26 13:24:00; // Datetime | Since date time (optional, if provided changes since this datetime are returned)
-$extended = false; // bool | Include all Broadcast information in the response ( = slower )
 
 try {
-    $result = $apiInstance->epgChangesGet($startdate, $enddate, $since, $extended);
+    $result = $apiInstance->epgChangesGet($startdate, $enddate, $since);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EPGApi->epgChangesGet: ', $e->getMessage(), PHP_EOL;
@@ -107,11 +106,10 @@ Name | Type | Description  | Notes
  **startdate** | **string**| Startdate of changes, in format | [optional]
  **enddate** | **string**| Enddate of changes, in format | [optional]
  **since** | [**Datetime**](../Model/.md)| Since date time (optional, if provided changes since this datetime are returned) | [optional]
- **extended** | **bool**| Include all Broadcast information in the response ( &#x3D; slower ) | [optional]
 
 ### Return type
 
-[**\RadioCorp\Model\EpgWeekly**](../Model/EpgWeekly.md)
+[**\RadioCorp\Model\EpgChanges**](../Model/EpgChanges.md)
 
 ### Authorization
 
